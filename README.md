@@ -13,15 +13,6 @@ The Service Registry, based on Eureka, allows microservices to register themselv
 
 - **Technologies**: Spring Cloud Netflix Eureka
 
-- ```java
-@SpringBootApplication
-@EnableEurekaServer
-public class ServiceRegistryApplication {
-    public static void main(String[] args) {
-        SpringApplication.run(ServiceRegistryApplication.class, args);
-    }
-}
-
 ### API Gateway
 The API Gateway handles all incoming requests and routes them to the appropriate microservice. It also provides cross-cutting concerns such as security and logging.
 
