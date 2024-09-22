@@ -56,8 +56,10 @@ Description : Retrieve the question with the given id<br>
 Authentication : user <br>
 <hr>
 <GET><code>questions/</code></GET> <br>
+
 Description : Retrieve all questions<br>
 Authentication : user <br>
+<hr>
 DELETE <code>questions/{questionId}</code> <br>
 Description : Delete a question <br>
 Authentication : user <br>
@@ -71,7 +73,7 @@ Description : Retrieve the generated questions<br>
 
 Request body <br>
 
-List [questionIds] <br>
+<code>List [questionIds]</code> <br>
 <hr>
 POST <code>questions/score</code><br>
 Description : Calculate the score based on response<br>
@@ -83,10 +85,30 @@ Description : Calculate the score based on response<br>
 ]</code>
 <hr>
 
-
-
-
 ### Quiz Service
 The Quiz Service manages the creation, submission, and scoring of quizzes. It interacts with the Question Service to fetch questions for quizzes.
 
 Technologies: Spring Boot, MySQL, Spring Data JPA
+
+<h5>REST API Endpoints</h5> <br>
+POST <code>quiz/create</code> <br>
+Description : Create a quiz<br>
+<code>{
+  "quizTitle": "string",
+  "difficultyLevel": "string",
+  "language": "string",
+  "numOfQuestions": 0
+}
+</code>
+<hr>
+GET <code>/quiz/{quizId}</code><br>
+Description : Retrieve the quiz questions<br>
+<hr>
+POST <code>/quiz/submit/{quizId}</code><br>
+Description : Submit the quiz<br>
+<code>[
+  {
+    "questionId": 0,
+    "response": "string"
+  }
+]</code>
